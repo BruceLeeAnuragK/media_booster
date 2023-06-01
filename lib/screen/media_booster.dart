@@ -1,3 +1,4 @@
+import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:media_booster/provider/media_booster_provider.dart';
 import 'package:provider/provider.dart';
@@ -28,8 +29,8 @@ class _MediaBoosterState extends State<MediaBooster> {
         ),
 
       ),
-      body: Center(
-        child: Column(
+      body: Consumer<AudioProvider>(
+        builder: (context, provider, child) => Column(
           children: [
            TabBarView(
              children: [
@@ -62,7 +63,6 @@ class _MediaBoosterState extends State<MediaBooster> {
                            IconButton(onPressed: ()=> Provider.of<AudioProvider>(context, listen: false).playSong(), icon: Icon(Icons.play_arrow),),
                            IconButton(onPressed: ()=> Provider.of<AudioProvider>(context, listen: false).playSong(), icon: Icon(Icons.play_arrow),),
                            IconButton(onPressed: ()=> Provider.of<AudioProvider>(context, listen: false).playSong(), icon: Icon(Icons.play_arrow),),
-
                          ],
                        ),
                      ],
@@ -73,6 +73,11 @@ class _MediaBoosterState extends State<MediaBooster> {
                    return const Center( child: CircularProgressIndicator());
                  }
                  },
+               ),
+               Column(
+                 children: [
+                   Chewie(controller: provider.chewiecontroller,),
+                 ],
                ),
              ],
            ),
