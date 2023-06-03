@@ -18,6 +18,7 @@ class _VideoScreenState extends State<VideoScreen> {
       body: Consumer<AudioProvider>(
         builder: (context, provider, child) => SingleChildScrollView(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Chewie(controller: provider.chewiecontroller),
             ],

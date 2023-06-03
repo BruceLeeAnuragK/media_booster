@@ -11,7 +11,7 @@ class AudioProvider extends ChangeNotifier {
 
   open() async {
     await myPlayer.open(
-      Audio("assets/audio/"),
+      Audio("assets/audio/planet-earth-109360"),
     );
   }
 
@@ -37,9 +37,10 @@ class AudioProvider extends ChangeNotifier {
   late ChewieController chewiecontroller;
   late VideoPlayerController controller;
   Vopen() {
-    controller = VideoPlayerController.network("")
+    controller = VideoPlayerController.network(
+        "https://www.youtube.com/watch?v=iFL_dDo7xh4&t=758s")
       ..initialize().then((_) {
-        print("url :  ${controller.value}");
+        print("url : ${controller.value}");
       });
     chewiecontroller = ChewieController(
       videoPlayerController: controller,
