@@ -36,6 +36,7 @@ class _SongPageState extends State<SongPage> {
                       provider.changeIndex(index: index);
                       Navigator.of(context).pushNamed(
                         "song_detail_page",
+                        arguments: index,
                       );
                     },
                   ),

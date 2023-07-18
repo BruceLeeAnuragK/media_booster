@@ -24,6 +24,7 @@ class _SongDetailPageState extends State<SongDetailPage>
 
   @override
   Widget build(BuildContext context) {
+    int index = ModalRoute.of(context)!.settings.arguments as int;
     return Consumer<AudioProvider>(
       builder: (context, provider, child) => SafeArea(
         child: Scaffold(
@@ -57,13 +58,15 @@ class _SongDetailPageState extends State<SongDetailPage>
                   alignment: Alignment.center,
                   height: 200,
                   width: 200,
-                  child:
-                      Image.network("${provider.AudioImage.indexOf(context)}"),
-                  decoration: BoxDecoration(
-                      gradient: LinearGradient(colors: [
-                    Colors.green,
-                    Colors.greenAccent,
-                  ])),
+                  decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        Colors.green,
+                        Colors.greenAccent,
+                      ],
+                    ),
+                  ),
+                  child: Image.network(provider.AudioImage[index]),
                 ),
                 StreamBuilder(
                   stream: provider.assetsAudioPlayer.currentPosition,

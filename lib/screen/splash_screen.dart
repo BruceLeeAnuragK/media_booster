@@ -8,10 +8,11 @@ class IntroScreen extends StatefulWidget {
 }
 
 class _IntroScreenState extends State<IntroScreen> {
+  @override
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 5), () {
-      Navigator.of(context).pushNamed("/");
+      Navigator.of(context).pushReplacementNamed("/");
     });
   }
 
@@ -22,7 +23,7 @@ class _IntroScreenState extends State<IntroScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
+          children: const [
             Icon(Icons.music_note, size: 300, color: Colors.green),
             CircularProgressIndicator(
               color: Colors.green,
