@@ -32,7 +32,6 @@ Project Requirements:
 
 OutPut:
 
-![Screenshot_20230715_222054]()
 
 [device-2023-07-15-222510 - Trim.zip](https://github.com/BruceLeeAnuragK/media_booster/files/12062282/device-2023-07-15-222510.-.Trim.zip)
 
